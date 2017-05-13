@@ -1,0 +1,18 @@
+/* Screens Settings */
+
+  @media (max-width: 1200px) {
+	#content{
+		padding:50px 50px; 
+	}
+  } 
+
+   @media (max-width: 1900px) {
+	.keyart_layer {
+	  background-position: top center;
+	  background-size: auto 850px;
+	  background-repeat: repeat-x;
+	  width: 100%;
+	  position: absolute;
+	}
+  }
+
