@@ -7,7 +7,7 @@
 
 
 
-/* Navigation Settings */
+/* Navigation style */
 nav {
 	position: absolute;
 	bottom: 0;
@@ -50,6 +50,7 @@ section {
 	height: 100vh;
 }
 
+/* Basic style*/
 
 .space{
 	padding:50px 0px;
@@ -72,7 +73,9 @@ section {
 	padding-bottom: 50px;
 }
 
-#content_1 h3:after {
+#content_1 h3:after,
+#content_2 h3:after,
+#content_3 h3:after {
     display: block;
     width: 100px;
     border: 2px solid #ffae21;
@@ -90,16 +93,6 @@ section {
 	padding-bottom: 50px;
 }
 
-#content_2 h3:after {
-    display: block;
-    width: 100px;
-    border: 2px solid #fff;
-    content: "";
-    margin: 0 auto;
-    margin-top: 20px;
-    /* margin-top: 40px; */
-}
-
 #content_3 h3{
 	font-size: 45px;
 	color: #fff;
@@ -108,16 +101,7 @@ section {
 	padding-bottom: 50px;
 }
 
-#content_3 h3:after {
-    display: block;
-    width: 100px;
-    border: 2px solid #ffae21;
-    content: "";
-    margin: 0 auto;
-    margin-top: 20px;
-    /* margin-top: 40px; */
-}
-
+/* Header style */
 
 #stars {
   width: 1px;
@@ -197,4 +181,60 @@ section {
   to {
     transform: translateY(-2000px);
   }
+}
+
+
+/* Grphics Style */
+
+#grid img {
+  border: 0;
+  display: block;
+  width: 100%;
+}
+
+.grid {
+	margin: 0 201px;
+}
+
+.grid .item {
+	display: block;
+	float: right;
+	padding: 3px;
+	width: 33%;
+	opacity: 0.6;
+	transition: all 0.2s ease-in;
+}
+
+.grid .item:hover {
+	opacity: 1;
+    transition: all 0.2s ease-in;
+}
+
+.grid.effect-2 .item.animate {
+	-webkit-transform: translateY(200px);
+	transform: translateY(200px);
+	-webkit-animation: moveUp 0.65s ease forwards;
+	animation: moveUp 0.65s ease forwards;
+}
+
+@-webkit-keyframes moveUp {
+	0% { }
+	100% { -webkit-transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveUp {
+	0% { }
+	100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}
+@media screen and (max-width: 900px) {
+	.grid .item {width: 50%;}
+  .entry {box-shadow: none;}
+  .entry > .grid > .item {width: 50%;}
+}
+
+@media screen and (max-width: 400px) {
+	.grid .item {width: 100%;}
+  .entry {padding: 20px 0;}
+  .entry > p {padding: 10px;}
+  .entry > .grid > .item {width: 100%;}
 }

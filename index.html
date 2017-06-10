@@ -35,7 +35,7 @@
 
   <section>
          <div class="keyart" id="parallax">          
-          <div class="keyart_layer parallax" id="keyart-0" data-speed="2"></div>        <!-- 00.0 -->
+          <div class="keyart_layer parallax" id="keyart-0" data-speed="2"></div>        <!-- 00.0 --> 
           <div class="" style="position: fixed;">
             <div id='stars'></div>
             <div id='stars2'></div>
@@ -57,8 +57,8 @@
         <nav class="hidden-xs">
            <ul id="top-menu">
               <li><a href="#content_1">About Me</a></li>
-              <li><a href="#content_2">Web Projects</a></li>
-              <li><a href="#content_3">Graphics</a></li>            
+              <li><a href="#content_2">Graphics</a></li>
+              <li><a href="#content_3">Web Projects</a></li>            
            </ul>
         </nav>
   </section>
@@ -83,28 +83,17 @@
   </div> 
 
   <div id="content_2"  style="background-color:#fff; position:relative;">
-      <div class="container text-center space">   
-      <h3>WEB PROJECTS</H3> 
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
+      <div class="text-center space">   
+      <h3>Graphics</H3> 
+         <div class="grid effect-2" id="grid">
+            <div class="item"><a href="#"><img src="images/graphics/1.jpg" alt="" /></a></div>
+            <div class="item"><a href="#"><img src="images/graphics/2.jpg" alt="" /></a></div>
+            <div class="item"><a href="#"><img src="images/graphics/3.jpg" alt="" /></a></div>
+            <div class="item"><a href="#"><img src="images/graphics/4.jpg" alt="" /></a></div>
+            <div class="item"><a href="#"><img src="images/graphics/5.jpg" alt="" /></a></div>
+            <div class="item"><a href="#"><img src="images/graphics/7.jpg" alt="" /></a></div>
+        </div>
+
       </div>
   </div> 
 
@@ -112,7 +101,7 @@
     <img src="images/parallax/parallax__new_8_1.png" style="width:100%;">
   </div> 
 
-   <div id="content_3"  style="background-color:#210002; position:relative;">
+   <div id="content_3"  style="background-color:#0d3b48; position:relative;">
       <div class="container text-center space">
         <h3>GRAPHICS</H3>
           <h1>FAWERFAW R </h1>
@@ -159,6 +148,26 @@
     <script src="js/scrolltop.js"></script>
     <script src="js/mouse_scroll.js"></script>
     <script src="js/preloader_spin.js"></script>
+    <script src="js/masonry.js"></script>
+
+    <script type="text/javascript">
+      $('#grid2 img').each(function(){
+          var $this = $(this); 
+          $this.wrap('<div class="item"><a></a></div>');
+          $('a').removeAttr('href');  
+      });
+      $('#grid2').addClass('effect-2');
+
+      $(window).load(function(){
+        var $container = $('.grid');
+        // initialize
+        $container.masonry({
+          //columnWidth: 200,
+          itemSelector: '.item'
+        })
+        $('.item > a').removeAttr('href')
+      })
+    </script>
 
      <script type="text/javascript">
         $(document).ready(function(){

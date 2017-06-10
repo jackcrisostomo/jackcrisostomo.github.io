@@ -4,6 +4,9 @@
 	#content{
 		padding:50px 50px; 
 	}
+	.grid {
+	margin: 0 0;
+	}
   } 
 
    @media (max-width: 1900px) {
