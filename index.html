@@ -84,16 +84,40 @@
 
   <div id="content_2"  style="background-color:#fff; position:relative;">
       <div class="text-center space">   
-      <h3>Graphics</H3> 
-         <div class="grid effect-2" id="grid">
-            <div class="item"><a href="#"><img src="images/graphics/1.jpg" alt="" /></a></div>
-            <div class="item"><a href="#"><img src="images/graphics/2.jpg" alt="" /></a></div>
-            <div class="item"><a href="#"><img src="images/graphics/3.jpg" alt="" /></a></div>
-            <div class="item"><a href="#"><img src="images/graphics/4.jpg" alt="" /></a></div>
-            <div class="item"><a href="#"><img src="images/graphics/5.jpg" alt="" /></a></div>
-            <div class="item"><a href="#"><img src="images/graphics/7.jpg" alt="" /></a></div>
-        </div>
+        <h3>Graphics</H3>      
+        <ul id="category-menu">
+          <li class="fil-cat" href="" data-rel="all">All</li>
+          <li class="fil-cat" data-rel="art">Arts</li>
+          <li class="fil-cat" data-rel="broch_cat">Brochures & Catalogs</li>
+          <li class="fil-cat" data-rel="web_banners">Web Banners</li>
+          <li class="fil-cat" data-rel="logos">Logo's</li>
+        </ul> 
+         
+        <div id="graphics_menu">
 
+          <div class="tile scale-anm art all">
+              <img src="images/graphics/1.jpg" alt="" />
+          </div>
+          <div class="tile scale-anm art all">
+              <img src="images/graphics/2.jpg" alt="" />
+          </div>
+          <div class="tile scale-anm web_banners all">
+              <img src="images/graphics/3.jpg" alt="" />
+          </div>
+          <div class="tile scale-anm art all">
+              <img src="images/graphics/4.jpg" alt="" />
+          </div>
+          <div class="tile scale-anm art all">
+              <img src="images/graphics/5.jpg" alt="" />
+          </div>
+          <div class="tile scale-anm web all">
+              <img src="images/graphics/6.jpg" alt="" />
+          </div>
+          <div class="tile scale-anm art all">
+              <img src="images/graphics/7.jpg" alt="" />
+          </div>
+
+        </div>
       </div>
   </div> 
 
@@ -103,36 +127,17 @@
 
    <div id="content_3"  style="background-color:#0d3b48; position:relative;">
       <div class="container text-center space">
-        <h3>GRAPHICS</H3>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
-          <h1>FAWERFAW R </h1>
+        <h3>Web Projects</H3>
+          <h4 style="color:#fff;">Under Construction</h1>
       </div>
   </div> 
-
+<!--
 <div style="background-color:#000; position:relative;">
         <div class="container text-center">
              <h6 style="color:#FFF;">Copyright 2015 © Garrett Philippines All Rights Reserved. </h6>
         </div>
 </div>
-
+-->
        
      <!-- END BODY -->
 
@@ -148,27 +153,8 @@
     <script src="js/scrolltop.js"></script>
     <script src="js/mouse_scroll.js"></script>
     <script src="js/preloader_spin.js"></script>
-    <script src="js/masonry.js"></script>
 
-    <script type="text/javascript">
-      $('#grid2 img').each(function(){
-          var $this = $(this); 
-          $this.wrap('<div class="item"><a></a></div>');
-          $('a').removeAttr('href');  
-      });
-      $('#grid2').addClass('effect-2');
-
-      $(window).load(function(){
-        var $container = $('.grid');
-        // initialize
-        $container.masonry({
-          //columnWidth: 200,
-          itemSelector: '.item'
-        })
-        $('.item > a').removeAttr('href')
-      })
-    </script>
-
+<!-- scroll top -->
      <script type="text/javascript">
         $(document).ready(function(){
          $(window).bind('scroll', function() {
@@ -184,6 +170,7 @@
 
      </script>
 
+<!-- scroll menu hover -->
      <script type="text/javascript">
       // Cache selectors
       var lastId,
@@ -224,5 +211,23 @@
                        
       });
      </script>
+
+<!-- Filter category -->
+     <script>
+     $(function() {
+          var selectedClass = "";
+          $(".fil-cat").click(function(){ 
+          selectedClass = $(this).attr("data-rel"); 
+           $("#graphics_menu").fadeTo(100, 0.1);
+          $("#graphics_menu div").not("."+selectedClass).fadeOut().removeClass('scale-anm');
+          setTimeout(function() {
+            $("."+selectedClass).fadeIn().addClass('scale-anm');
+            $("#graphics_menu").fadeTo(300, 1);
+          }, 300); 
+          
+        });
+      });
+     </script>
+
   </body>
 </html>

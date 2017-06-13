@@ -4,8 +4,17 @@
 	#content{
 		padding:50px 50px; 
 	}
-	.grid {
-	margin: 0 0;
+
+	#graphics_menu {  
+		padding-top: 30px; 
+	    margin: 1rem 0rem;
+	    column-count: 2;
+	    -webkit-column-gap: 1rem;
+	    -moz-column-gap: 1rem;
+	    column-gap: 1rem;
+	    -webkit-column-width: 33.33333333333333%;
+	    -moz-column-width: 33.33333333333333%;
+	    column-width: 33%;
 	}
   } 
 
